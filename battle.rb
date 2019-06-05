@@ -76,7 +76,7 @@ def take_turn(player, t)
     else
       puts "Invalid input"
     end
-  elsif play.class == Mage
+  elsif player.class == Mage
     puts "Select an Action\n1 - Cast Spell\n2 - Pass\n3 - Quit"
     answer = gets.chomp.to_i #to integer
     if answer == 1
@@ -95,7 +95,7 @@ def take_turn(player, t)
     answer = gets.chomp.to_i #to integer
     if answer == 1
       # puts "#{player.name} attacked"
-      player.attack(t)
+      player.throw(t)
     elsif answer == 2
       puts "Skipping turn..."
     elsif answer == 3
@@ -104,6 +104,7 @@ def take_turn(player, t)
     else
       puts "Invalid input"
     end
+  end
 end
 
 def start_battle(p1, p2)
